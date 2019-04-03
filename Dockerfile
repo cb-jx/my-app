@@ -1,10 +1,9 @@
 FROM openjdk:8-jdk-slim
 ENV PORT 8080
-ENV CLASSPATH /opt/lib
+
 EXPOSE 8080
 
-# copy pom.xml and wildcards to avoid this command failing if there's no target/lib directory
-COPY pom.xml target/*.jar /opt/lib/
+
 
 # NOTE we assume there's only 1 jar in the target dir
 # but at least this means we don't have to guess the name
